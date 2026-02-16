@@ -28,115 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
+            buttonReadLections = new Button();
+            buttonSolve = new Button();
+            buttonLogin = new Button();
+            buttonCreateTests = new Button();
+            buttonAdmin = new Button();
+            buttonExit = new Button();
+            buttonAboutUs = new Button();
+            buttonRegistration = new Button();
             SuspendLayout();
             // 
-            // button1
+            // buttonReadLections
             // 
-            button1.Location = new Point(344, 52);
-            button1.Name = "button1";
-            button1.Size = new Size(166, 72);
-            button1.TabIndex = 0;
-            button1.Text = "Читать лекции";
-            button1.UseVisualStyleBackColor = true;
+            buttonReadLections.Location = new Point(359, 26);
+            buttonReadLections.Name = "buttonReadLections";
+            buttonReadLections.Size = new Size(166, 72);
+            buttonReadLections.TabIndex = 0;
+            buttonReadLections.Text = "Читать лекции";
+            buttonReadLections.UseVisualStyleBackColor = true;
+            buttonReadLections.Click += buttonReadLections_Click;
             // 
-            // button2
+            // buttonSolve
             // 
-            button2.Location = new Point(344, 152);
-            button2.Name = "button2";
-            button2.Size = new Size(166, 72);
-            button2.TabIndex = 1;
-            button2.Text = "Решать задания";
-            button2.UseVisualStyleBackColor = true;
+            buttonSolve.Location = new Point(359, 126);
+            buttonSolve.Name = "buttonSolve";
+            buttonSolve.Size = new Size(166, 72);
+            buttonSolve.TabIndex = 1;
+            buttonSolve.Text = "Решать задания";
+            buttonSolve.UseVisualStyleBackColor = true;
+            buttonSolve.Click += buttonSolve_Click;
             // 
-            // button3
+            // buttonLogin
             // 
-            button3.Location = new Point(751, 12);
-            button3.Name = "button3";
-            button3.Size = new Size(147, 54);
-            button3.TabIndex = 2;
-            button3.Text = "Войти в аккаунт";
-            button3.UseVisualStyleBackColor = true;
+            buttonLogin.Location = new Point(751, 12);
+            buttonLogin.Name = "buttonLogin";
+            buttonLogin.Size = new Size(147, 54);
+            buttonLogin.TabIndex = 2;
+            buttonLogin.Text = "Войти в аккаунт";
+            buttonLogin.UseVisualStyleBackColor = true;
+            buttonLogin.Click += buttonLogin_Click;
             // 
-            // button4
+            // buttonCreateTests
             // 
-            button4.Location = new Point(344, 244);
-            button4.Name = "button4";
-            button4.Size = new Size(166, 72);
-            button4.TabIndex = 3;
-            button4.Text = "Создать задания для учеников";
-            button4.UseVisualStyleBackColor = true;
+            buttonCreateTests.Location = new Point(359, 218);
+            buttonCreateTests.Name = "buttonCreateTests";
+            buttonCreateTests.Size = new Size(166, 72);
+            buttonCreateTests.TabIndex = 3;
+            buttonCreateTests.Text = "Создать задания для учеников";
+            buttonCreateTests.UseVisualStyleBackColor = true;
+            buttonCreateTests.Click += buttonCreateTests_Click;
             // 
-            // button5
+            // buttonAdmin
             // 
-            button5.Location = new Point(344, 339);
-            button5.Name = "button5";
-            button5.Size = new Size(166, 72);
-            button5.TabIndex = 4;
-            button5.Text = "Панель администратора";
-            button5.UseVisualStyleBackColor = true;
+            buttonAdmin.Location = new Point(359, 313);
+            buttonAdmin.Name = "buttonAdmin";
+            buttonAdmin.Size = new Size(166, 72);
+            buttonAdmin.TabIndex = 4;
+            buttonAdmin.Text = "Панель администратора";
+            buttonAdmin.UseVisualStyleBackColor = true;
+            buttonAdmin.Click += buttonAdmin_Click;
             // 
-            // button6
+            // buttonExit
             // 
-            button6.Location = new Point(344, 433);
-            button6.Name = "button6";
-            button6.Size = new Size(166, 72);
-            button6.TabIndex = 5;
-            button6.Text = "Выход";
-            button6.UseVisualStyleBackColor = true;
+            buttonExit.Location = new Point(359, 407);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(166, 72);
+            buttonExit.TabIndex = 5;
+            buttonExit.Text = "Выход";
+            buttonExit.UseVisualStyleBackColor = true;
+            buttonExit.Click += buttonExit_Click;
             // 
-            // button7
+            // buttonAboutUs
             // 
-            button7.Location = new Point(12, 451);
-            button7.Name = "button7";
-            button7.Size = new Size(124, 54);
-            button7.TabIndex = 6;
-            button7.Text = "О нас";
-            button7.UseVisualStyleBackColor = true;
+            buttonAboutUs.Location = new Point(12, 451);
+            buttonAboutUs.Name = "buttonAboutUs";
+            buttonAboutUs.Size = new Size(124, 54);
+            buttonAboutUs.TabIndex = 6;
+            buttonAboutUs.Text = "О нас";
+            buttonAboutUs.UseVisualStyleBackColor = true;
+            buttonAboutUs.Click += buttonAboutUs_Click;
             // 
-            // button8
+            // buttonRegistration
             // 
-            button8.Location = new Point(751, 84);
-            button8.Name = "button8";
-            button8.Size = new Size(147, 54);
-            button8.TabIndex = 7;
-            button8.Text = "Зарегестрироваться";
-            button8.UseVisualStyleBackColor = true;
+            buttonRegistration.Location = new Point(751, 84);
+            buttonRegistration.Name = "buttonRegistration";
+            buttonRegistration.Size = new Size(147, 54);
+            buttonRegistration.TabIndex = 7;
+            buttonRegistration.Text = "Зарегестрироваться";
+            buttonRegistration.UseVisualStyleBackColor = true;
+            buttonRegistration.Click += buttonRegistration_Click;
             // 
-            // Form1
+            // MainMenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(910, 526);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Name = "Form1";
+            Controls.Add(buttonRegistration);
+            Controls.Add(buttonAboutUs);
+            Controls.Add(buttonExit);
+            Controls.Add(buttonAdmin);
+            Controls.Add(buttonCreateTests);
+            Controls.Add(buttonLogin);
+            Controls.Add(buttonSolve);
+            Controls.Add(buttonReadLections);
+            Name = "MainMenuForm";
             Text = "MainMenu";
+            Load += MainMenuForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
+        private Button buttonReadLections;
+        private Button buttonSolve;
+        private Button buttonLogin;
+        private Button buttonCreateTests;
+        private Button buttonAdmin;
+        private Button buttonExit;
+        private Button buttonAboutUs;
+        private Button buttonRegistration;
     }
 }
