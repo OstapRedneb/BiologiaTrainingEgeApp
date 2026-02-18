@@ -34,6 +34,9 @@
             label1 = new Label();
             label2 = new Label();
             textBoxPassword = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            textBoxCopyPassword = new TextBox();
             SuspendLayout();
             // 
             // buttonBack
@@ -47,6 +50,7 @@
             buttonBack.TabIndex = 0;
             buttonBack.Text = "Назад";
             buttonBack.UseVisualStyleBackColor = false;
+            buttonBack.Click += buttonBack_Click;
             // 
             // buttonCreate
             // 
@@ -59,6 +63,7 @@
             buttonCreate.TabIndex = 1;
             buttonCreate.Text = "Готово";
             buttonCreate.UseVisualStyleBackColor = false;
+            buttonCreate.Click += buttonCreate_Click;
             // 
             // textBoxLogin
             // 
@@ -88,7 +93,7 @@
             label2.BackColor = SystemColors.Highlight;
             label2.Font = new Font("Comic Sans MS", 12F, FontStyle.Italic, GraphicsUnit.Point, 204);
             label2.ForeColor = Color.FromArgb(255, 128, 0);
-            label2.Location = new Point(271, 165);
+            label2.Location = new Point(260, 165);
             label2.Name = "label2";
             label2.Size = new Size(74, 23);
             label2.TabIndex = 5;
@@ -104,6 +109,40 @@
             textBoxPassword.Size = new Size(163, 30);
             textBoxPassword.TabIndex = 4;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(48, 0, 48);
+            label3.Font = new Font("Comic Sans MS", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            label3.ForeColor = Color.FromArgb(255, 128, 0);
+            label3.Location = new Point(264, 36);
+            label3.Name = "label3";
+            label3.Size = new Size(250, 45);
+            label3.TabIndex = 6;
+            label3.Text = "РЕГИСТРАЦИЯ";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = SystemColors.Highlight;
+            label4.Font = new Font("Comic Sans MS", 12F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            label4.ForeColor = Color.FromArgb(255, 128, 0);
+            label4.Location = new Point(175, 221);
+            label4.Name = "label4";
+            label4.Size = new Size(159, 23);
+            label4.TabIndex = 8;
+            label4.Text = "Повторите пароль:";
+            // 
+            // textBoxCopyPassword
+            // 
+            textBoxCopyPassword.BackColor = SystemColors.HotTrack;
+            textBoxCopyPassword.Font = new Font("Comic Sans MS", 12F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            textBoxCopyPassword.ForeColor = Color.FromArgb(255, 128, 0);
+            textBoxCopyPassword.Location = new Point(347, 218);
+            textBoxCopyPassword.Name = "textBoxCopyPassword";
+            textBoxCopyPassword.Size = new Size(163, 30);
+            textBoxCopyPassword.TabIndex = 7;
+            // 
             // RegistrationForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -111,6 +150,9 @@
             BackgroundImage = Properties.Resources._99px_ru_wallpaper_366170_siluet_volka_stojashego_na_holme_na_fone_jarkogo;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(textBoxCopyPassword);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(textBoxPassword);
             Controls.Add(label1);
@@ -131,5 +173,8 @@
         private Label label1;
         private Label label2;
         private TextBox textBoxPassword;
+        private Label label3;
+        private Label label4;
+        private TextBox textBoxCopyPassword;
     }
 }

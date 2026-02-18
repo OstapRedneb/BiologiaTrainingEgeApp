@@ -15,12 +15,17 @@ namespace BiologiaTrainingEgeApp.Storages
         public static List<User> GetAll() =>
             JsonConvert.DeserializeObject<List<User>>(_path) ?? new List<User>();
 
-        public static void WriteInto(List<User> tasks) 
+        public static void Add(User user) 
+        {
+
+        }
+
+        private static void WriteInto(List<User> tasks) 
         {
             string blob = JsonConvert.SerializeObject(tasks ?? new List<User>());
             using (StringWriter stringWriter = new StringWriter()) 
             {
-                stringWriter.Write(blob);
+                stringWriter.Write(_path, blob);
             }
         }
     }

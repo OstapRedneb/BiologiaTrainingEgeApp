@@ -11,7 +11,7 @@ namespace BiologiaTrainingEgeApp.Classes
         public Guid Id { get; init; }
         public string Login { get; init; }
         public string Password { get; init; }
-        public int CountTasks { get; set; }
-        public bool IsAdmin { get; set; }
+        public int CountTasks { get; set; } = 0;
+        public bool IsAdmin { get; set; } = false;
     }
 }

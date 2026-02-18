@@ -44,12 +44,16 @@ namespace BiologiaTrainingEgeApp
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
         }
 
         private void buttonRegistration_Click(object sender, EventArgs e)
         {
-
+            RegistrationForm registrationForm = new RegistrationForm();
+            registrationForm.Show();
+            this.Hide();
         }
     }
 }
