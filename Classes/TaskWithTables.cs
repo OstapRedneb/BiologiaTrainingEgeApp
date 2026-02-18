@@ -1,4 +1,4 @@
-﻿using BiologiaTrainingEgeApp.Enums;
+﻿using BiologiaTrainingEgeApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 
 namespace BiologiaTrainingEgeApp.Classes
 {
-    public record TaskWithTables(Tasks Number, string Text, string[,] Table, string Answer) : Task(Number, Text, Answer);
+    public record TaskWithTables(int Number, string Text, string[,] Table, string Answer) : Task(Number, Text, Answer);
 }
