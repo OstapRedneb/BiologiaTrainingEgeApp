@@ -28,6 +28,8 @@ namespace BiologiaTrainingEgeApp
                 MessageBox.Show("Вы не ввели логин", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             if (!textBoxLogin.Text.All(c => '0' <= c && c <= '9' || 'A' <= c && c <= 'z' || 'А' <= c && c <= 'я'))
                 MessageBox.Show("Логин должен состоять только из цифр и букв", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            if ()
         }
     }
 }

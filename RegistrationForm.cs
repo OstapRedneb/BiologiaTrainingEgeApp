@@ -41,7 +41,9 @@ namespace BiologiaTrainingEgeApp
                 MessageBox.Show("Пароль должен состоять только из цифр и букв", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             User user = new User() {Login = textBoxLogin.Text, Id = Guid.NewGuid(), Password = textBoxPassword.Text};
-            UserStorage.WriteInto(user);
+            
+            if (!UserStorage.Add(user))
+                MessageBox.Show("Пользователь с данным логином уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
