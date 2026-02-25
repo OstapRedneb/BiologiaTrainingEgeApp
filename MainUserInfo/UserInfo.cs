@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.VisualBasic.ApplicationServices;
+using BiologiaTrainingEgeApp.Classes;
 
-namespace BiologiaTrainingEgeApp.UserInfo
+namespace BiologiaTrainingEgeApp.MainUserInfo
 {
     public static class UserInfo
     {

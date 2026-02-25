@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BiologiaTrainingEgeApp.Storages;
+using BiologiaTrainingEgeApp.MainUserInfo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +31,15 @@ namespace BiologiaTrainingEgeApp
             if (!textBoxLogin.Text.All(c => '0' <= c && c <= '9' || 'A' <= c && c <= 'z' || 'А' <= c && c <= 'я'))
                 MessageBox.Show("Логин должен состоять только из цифр и букв", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            if ()
+            if (UserStorage.GetAll().All(user => user.Login != textBoxLogin.Text))
+            {
+                MessageBox.Show("Пользователя с таким логином нет", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                UserInfo.User = UserStorage.GetAll().SingleOrDefault(user => user.Login == textBoxLogin.Text);
+                buttonBack_Click(this, new EventArgs());
+            }
         }
     }
 }

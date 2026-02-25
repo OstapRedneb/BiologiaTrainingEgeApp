@@ -78,7 +78,7 @@
             buttonCreateTests.Name = "buttonCreateTests";
             buttonCreateTests.Size = new Size(166, 72);
             buttonCreateTests.TabIndex = 3;
-            buttonCreateTests.Text = "Создать задания для учеников";
+            buttonCreateTests.Text = "Создать";
             buttonCreateTests.UseVisualStyleBackColor = false;
             buttonCreateTests.Click += buttonCreateTests_Click;
             // 

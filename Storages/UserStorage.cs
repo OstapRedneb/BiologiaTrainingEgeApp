@@ -12,8 +12,12 @@ namespace BiologiaTrainingEgeApp.Storages
     {
         private static readonly string _path = "users";
 
-        public static List<User> GetAll() =>
-            JsonConvert.DeserializeObject<List<User>>(_path) ?? new List<User>();
+        public static List<User> GetAll()
+        {
+            if (File.Exists(_path))
+                return JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(_path)) ?? new List<User>();
+            return new List<User>();
+        }
 
         public static bool Add(User user) 
         {

@@ -40,10 +40,12 @@ namespace BiologiaTrainingEgeApp
             if (!textBoxPassword.Text.All(c => '0' <= c && c <= '9' || 'A' <= c && c <= 'z' || 'А' <= c && c <= 'я'))
                 MessageBox.Show("Пароль должен состоять только из цифр и букв", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            User user = new User() {Login = textBoxLogin.Text, Id = Guid.NewGuid(), Password = textBoxPassword.Text};
-            
+            User user = new User() {Login = textBoxLogin.Text, Id = Guid.NewGuid(), Password = textBoxPassword.Text };
+
             if (!UserStorage.Add(user))
                 MessageBox.Show("Пользователь с данным логином уже существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                buttonBack_Click(this, new EventArgs());
         }
     }
 }
