@@ -28,29 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            добавитьТToolStripMenuItem = new ToolStripMenuItem();
-            таблицаToolStripMenuItem = new ToolStripMenuItem();
-            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { добавитьТToolStripMenuItem, таблицаToolStripMenuItem });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 70);
-            // 
-            // добавитьТToolStripMenuItem
-            // 
-            добавитьТToolStripMenuItem.Name = "добавитьТToolStripMenuItem";
-            добавитьТToolStripMenuItem.Size = new Size(180, 22);
-            // 
-            // таблицаToolStripMenuItem
-            // 
-            таблицаToolStripMenuItem.Name = "таблицаToolStripMenuItem";
-            таблицаToolStripMenuItem.Size = new Size(180, 22);
-            таблицаToolStripMenuItem.Text = "+ таблица";
             // 
             // CreateTaskForm
             // 
@@ -59,14 +37,9 @@
             ClientSize = new Size(800, 450);
             Name = "CreateTaskForm";
             Text = "CreateTaskForm";
-            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem добавитьТToolStripMenuItem;
-        private ToolStripMenuItem таблицаToolStripMenuItem;
     }
 }

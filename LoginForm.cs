@@ -35,6 +35,10 @@ namespace BiologiaTrainingEgeApp
             {
                 MessageBox.Show("Пользователя с таким логином нет", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (UserStorage.GetAll().SingleOrDefault(user => user.Login == textBoxLogin.Text)?.Password != textBoxPassword.Text)
+            {
+                MessageBox.Show("Неверный пароль", "Неудача", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 UserInfo.User = UserStorage.GetAll().SingleOrDefault(user => user.Login == textBoxLogin.Text);

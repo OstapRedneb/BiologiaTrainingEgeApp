@@ -7,6 +7,7 @@ namespace BiologiaTrainingEgeApp
         public MainMenuForm()
         {
             InitializeComponent();
+            labelAcount.Text = UserInfo.User?.Login ?? "Нет аккаунта";
         }
 
         private void MainMenuForm_Load(object sender, EventArgs e)

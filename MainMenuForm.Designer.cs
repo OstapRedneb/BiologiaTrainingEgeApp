@@ -36,6 +36,7 @@
             buttonExit = new Button();
             buttonAboutUs = new Button();
             buttonRegistration = new Button();
+            labelAcount = new Label();
             SuspendLayout();
             // 
             // buttonReadLections
@@ -126,12 +127,25 @@
             buttonRegistration.UseVisualStyleBackColor = false;
             buttonRegistration.Click += buttonRegistration_Click;
             // 
+            // labelAcount
+            // 
+            labelAcount.AutoSize = true;
+            labelAcount.BackColor = Color.SlateGray;
+            labelAcount.Font = new Font("Comic Sans MS", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            labelAcount.ForeColor = SystemColors.ButtonHighlight;
+            labelAcount.Location = new Point(15, 11);
+            labelAcount.Name = "labelAcount";
+            labelAcount.Size = new Size(183, 34);
+            labelAcount.TabIndex = 8;
+            labelAcount.Text = "Нет аккаунта";
+            // 
             // MainMenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 255, 128);
             ClientSize = new Size(910, 526);
+            Controls.Add(labelAcount);
             Controls.Add(buttonRegistration);
             Controls.Add(buttonAboutUs);
             Controls.Add(buttonExit);
@@ -144,6 +158,7 @@
             Text = "MainMenu";
             Load += MainMenuForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -156,5 +171,6 @@
         private Button buttonExit;
         private Button buttonAboutUs;
         private Button buttonRegistration;
+        private Label labelAcount;
     }
 }
