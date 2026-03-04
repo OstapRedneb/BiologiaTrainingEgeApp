@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using BiologiaTrainingEgeApp.Classes;
 using Newtonsoft.Json;
 
 namespace BiologiaTrainingEgeApp.Storages
@@ -11,16 +11,16 @@ namespace BiologiaTrainingEgeApp.Storages
     {
         private static readonly string _path = "tsaks";
 
-        public static List<Task> GetAll()
+        public static List<TaskData> GetAll()
         {
             if (File.Exists(_path))
-                return JsonConvert.DeserializeObject<List<Task>>(File.ReadAllText(_path)) ?? new List<Task>();
-            return new List<Task>();
+                return JsonConvert.DeserializeObject<List<TaskData>>(File.ReadAllText(_path)) ?? new List<TaskData>();
+            return new List<TaskData>();
         }
 
-        public static bool Add(Task task)
+        public static bool Add(TaskData task)
         {
-            List<Task> tasks = GetAll();
+            List<TaskData> tasks = GetAll();
 
             if (tasks.Contains(task))
                 return false;
@@ -32,14 +32,14 @@ namespace BiologiaTrainingEgeApp.Storages
             return true;
         }
 
-        public static bool AddRange(params Task[] tasks)
+        public static bool AddRange(params TaskData[] tasks)
         {
             return tasks.All(task => Add(task));
         }
 
-        private static void WriteInto(List<Task> tasks) 
+        private static void WriteInto(List<TaskData> tasks) 
         {
-            string blob = JsonConvert.SerializeObject(tasks ?? new List<Task>());
+            string blob = JsonConvert.SerializeObject(tasks ?? new List<TaskData>());
             using (StreamWriter stringWriter = new StreamWriter(_path, false)) 
             {
                 stringWriter.Write(blob);
