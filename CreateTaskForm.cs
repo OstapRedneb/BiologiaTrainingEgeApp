@@ -14,12 +14,15 @@ namespace BiologiaTrainingEgeApp
 {
     public partial class CreateTaskForm : Form
     {
+        private TaskData currentTask;
+
         public CreateTaskForm()
         {
             InitializeComponent();
+            currentTask = new TaskData();
         }
 
-        private void buttonAddText_Click(object sender, EventArgs e)
+        public void buttonAddText_Click(object sender, EventArgs e)
         {
             //панель-обертка для блока
             Panel panel = new Panel
@@ -57,7 +60,7 @@ namespace BiologiaTrainingEgeApp
             flowLayoutPanel1.Controls.Add(panel);
         }
 
-        private void buttonAddImage_Click(object sender, EventArgs e)
+        public void buttonAddImage_Click(object sender, EventArgs e)
         {
             Panel panel = new Panel
             {
@@ -115,7 +118,7 @@ namespace BiologiaTrainingEgeApp
             flowLayoutPanel1.Controls.Add(panel);
         }
 
-        private void buttonAddTable_Click(object sender, EventArgs e)
+        public void buttonAddTable_Click(object sender, EventArgs e)
         {
             Panel panel = new Panel
             {
@@ -335,7 +338,7 @@ namespace BiologiaTrainingEgeApp
             flowLayoutPanel1.Controls.Add(panel);
         }
 
-        private void buttonSaveTask_Click(object sender, EventArgs e)
+        public void buttonSaveTask_Click(object sender, EventArgs e)
         {
             try
             {
@@ -343,7 +346,7 @@ namespace BiologiaTrainingEgeApp
                 TaskData taskData = CollectTaskData();
 
                 // Проверяем, что задание не пустое
-                if (string.IsNullOrWhiteSpace(taskData.TaskTitle) &&
+                if (1 <= taskData.Number && taskData.Number <= 28 &&
                     string.IsNullOrWhiteSpace(taskData.QuestionText) &&
                     taskData.Blocks.Count == 0)
                 {
@@ -374,13 +377,6 @@ namespace BiologiaTrainingEgeApp
                     MessageBoxIcon.Error);
             }
         }
-        private TaskData currentTask;
-
-        public TaskCreationForm()
-        {
-            InitializeComponent();
-            currentTask = new TaskData();
-        }
 
         // Метод для сбора данных с формы
         private TaskData CollectTaskData()
@@ -388,8 +384,8 @@ namespace BiologiaTrainingEgeApp
             TaskData taskData = new TaskData();
 
             // Собираем основную информацию
-            taskData.TaskTitle = textBoxTitle.Text; // предположим, у вас есть TextBox для названия
-            taskData.QuestionText = textBoxQuestion.Text; // TextBox для вопроса
+            taskData.Number = GetCorrectNumer();
+            //taskData.QuestionText = textBoxQuestion.Text; // TextBox для вопроса
             taskData.ModifiedDate = DateTime.Now;
 
             int orderIndex = 0;
@@ -547,6 +543,17 @@ namespace BiologiaTrainingEgeApp
             }
 
             return tableBlock;
+        }
+
+        private int GetCorrectNumer() 
+        {
+            while (true)
+            {
+                string input = Microsoft.VisualBasic.Interaction.InputBox("Какой это номер задания?", "Номер задания");
+                if (int.TryParse(input, out int number) && 1 <= number && number <= 28)
+                    return number;
+                MessageBox.Show("Некорректный номер задания\nВы должны ввести номер от 1 до 28", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

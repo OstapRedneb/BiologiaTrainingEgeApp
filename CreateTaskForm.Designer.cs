@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
-            panelControls = new Panel();
-            buttonSave = new Button();
+            panel1 = new Panel();
+            buttonSaveTask = new Button();
             buttonAddTable = new Button();
             buttonAddImage = new Button();
             buttonAddText = new Button();
             flowLayoutPanel1.SuspendLayout();
-            panelControls.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(panelControls);
+            flowLayoutPanel1.Controls.Add(panel1);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
@@ -50,29 +50,30 @@
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.WrapContents = false;
             // 
-            // panelControls
+            // panel1
             // 
-            panelControls.BackColor = Color.RosyBrown;
-            panelControls.Controls.Add(buttonSave);
-            panelControls.Controls.Add(buttonAddTable);
-            panelControls.Controls.Add(buttonAddImage);
-            panelControls.Controls.Add(buttonAddText);
-            panelControls.Location = new Point(3, 3);
-            panelControls.Name = "panelControls";
-            panelControls.Size = new Size(797, 39);
-            panelControls.TabIndex = 0;
+            panel1.BackColor = Color.RosyBrown;
+            panel1.Controls.Add(buttonSaveTask);
+            panel1.Controls.Add(buttonAddTable);
+            panel1.Controls.Add(buttonAddImage);
+            panel1.Controls.Add(buttonAddText);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(797, 39);
+            panel1.TabIndex = 4;
             // 
-            // buttonSave
+            // buttonSaveTask
             // 
-            buttonSave.BackColor = Color.Red;
-            buttonSave.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
-            buttonSave.ForeColor = SystemColors.AppWorkspace;
-            buttonSave.Location = new Point(616, 3);
-            buttonSave.Name = "buttonSave";
-            buttonSave.Size = new Size(178, 33);
-            buttonSave.TabIndex = 3;
-            buttonSave.Text = "Сохранить задание";
-            buttonSave.UseVisualStyleBackColor = false;
+            buttonSaveTask.BackColor = Color.Red;
+            buttonSaveTask.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 204);
+            buttonSaveTask.ForeColor = SystemColors.AppWorkspace;
+            buttonSaveTask.Location = new Point(616, 3);
+            buttonSaveTask.Name = "buttonSaveTask";
+            buttonSaveTask.Size = new Size(178, 33);
+            buttonSaveTask.TabIndex = 3;
+            buttonSaveTask.Text = "Сохранить задание";
+            buttonSaveTask.UseVisualStyleBackColor = false;
+            buttonSaveTask.Click += buttonAddText_Click;
             // 
             // buttonAddTable
             // 
@@ -108,6 +109,7 @@
             buttonAddText.TabIndex = 0;
             buttonAddText.Text = "Добавить текст";
             buttonAddText.UseVisualStyleBackColor = false;
+            buttonAddImage.Click += buttonAddImage_Click;
             buttonAddText.Click += buttonAddText_Click;
             // 
             // CreateTaskForm
@@ -119,17 +121,17 @@
             Name = "CreateTaskForm";
             Text = "CreateTaskForm";
             flowLayoutPanel1.ResumeLayout(false);
-            panelControls.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panelControls;
-        private Button buttonAddText;
+        private Panel panel1;
+        private Button buttonSaveTask;
         private Button buttonAddTable;
         private Button buttonAddImage;
-        private Button buttonSave;
+        private Button buttonAddText;
     }
 }

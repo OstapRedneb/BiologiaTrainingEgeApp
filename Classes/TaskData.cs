@@ -12,8 +12,9 @@ namespace BiologiaTrainingEgeApp.Classes
     public class TaskData
     {
         
-        public string TaskTitle { get; set; }              // Название/тема задания
+        public int Number { get; set; }              // Название/тема задания
         public string QuestionText { get; set; }            // Текст вопроса
+        public string Answer { get; set; }                  // Корректный ответ
         public List<TaskBlock> Blocks { get; set; }         // Блоки с содержимым
         public DateTime CreatedDate { get; set; }           // Дата создания
         public DateTime ModifiedDate { get; set; }          // Дата изменения
