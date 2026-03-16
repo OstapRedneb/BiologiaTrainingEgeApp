@@ -22,46 +22,72 @@ namespace BiologiaTrainingEgeApp
             currentTask = new TaskData();
         }
 
-        public void buttonAddText_Click(object sender, EventArgs e)
+        private void buttonAddText_Click(object sender, EventArgs e)
         {
-            //панель-обертка для блока
+            // Панель-обертка для блока (увеличим высоту до 130, чтобы поместились элементы)
             Panel panel = new Panel
             {
-                Height = 100,
-                Width = flowLayoutPanel1.ClientSize.Width - 20, // с учетом скролла
+                Height = 130,
+                Width = flowLayoutPanel1.ClientSize.Width - 20,
                 BorderStyle = BorderStyle.FixedSingle,
                 Margin = new Padding(5)
             };
 
-            // Текстовое поле
-            TextBox textBox = new TextBox
+            // Верхняя панель для CheckBox и кнопки удаления
+            Panel topPanel = new Panel
             {
-                Multiline = true,
-                ScrollBars = ScrollBars.Vertical,
+                Height = 30,
+                Width = panel.Width - 10,
                 Location = new Point(5, 5),
-                Width = panel.Width - 60,
-                Height = panel.Height - 10,
-                Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
+            };
+
+            // Флажок "Сделать вопросом"
+            CheckBox chkIsQuestion = new CheckBox
+            {
+                Text = "Сделать вопросом",
+                Location = new Point(0, 5),
+                AutoSize = true,
+                Anchor = AnchorStyles.Top | AnchorStyles.Left
             };
 
             // Кнопка удаления блока
             Button btnDelete = new Button
             {
                 Text = "X",
-                Location = new Point(panel.Width - 50, 5),
+                Location = new Point(topPanel.Width - 50, 0),
                 Size = new Size(45, 25),
                 Anchor = AnchorStyles.Top | AnchorStyles.Right,
-                Tag = panel // чтобы знать, какую панель удалять
+                Tag = panel
             };
             btnDelete.Click += (s, args) => flowLayoutPanel1.Controls.Remove(panel);
 
+            topPanel.Controls.Add(chkIsQuestion);
+            topPanel.Controls.Add(btnDelete);
+
+            // Текстовое поле (располагается ниже topPanel)
+            TextBox textBox = new TextBox
+            {
+                Multiline = true,
+                ScrollBars = ScrollBars.Vertical,
+                Location = new Point(5, 40),
+                Width = panel.Width - 10,
+                Height = panel.Height - 50,
+                Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom
+            };
+
+            panel.Controls.Add(topPanel);
             panel.Controls.Add(textBox);
-            panel.Controls.Add(btnDelete);
             flowLayoutPanel1.Controls.Add(panel);
         }
 
         public void buttonAddImage_Click(object sender, EventArgs e)
         {
+            if (flowLayoutPanel1.Controls.OfType<PictureBox>().Count() > 1)
+            {
+                MessageBox.Show("В тексте уже есть изображение.\nВы должны уалть уже имеющуюся панель с изображением для добавления нового.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Panel panel = new Panel
             {
                 Height = 200,
@@ -345,13 +371,13 @@ namespace BiologiaTrainingEgeApp
                 // Собираем данные
                 TaskData taskData = CollectTaskData();
 
-                // Проверяем, что задание не пустое
+                // Проверяем, что задание не пустое и что номер верный
                 if (1 <= taskData.Number && taskData.Number <= 28 &&
                     string.IsNullOrWhiteSpace(taskData.QuestionText) &&
                     taskData.Blocks.Count == 0)
                 {
                     DialogResult result = MessageBox.Show(
-                        "Задание пустое. Всё равно сохранить?",
+                        "Задание пустое или имеет ошибки в номере задания. Всё равно сохранить?",
                         "Подтверждение",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Question);
@@ -385,7 +411,16 @@ namespace BiologiaTrainingEgeApp
 
             // Собираем основную информацию
             taskData.Number = GetCorrectNumer();
-            //taskData.QuestionText = textBoxQuestion.Text; // TextBox для вопроса
+
+            if (flowLayoutPanel1.Controls
+                .OfType<Panel>()
+                .Any(panel => panel.Controls
+                                        .OfType<CheckBox>()
+                                        .Any(checkBox => checkBox.Checked)))
+            {
+                taskData.QuestionText = flowLayoutPanel1.Controls.OfType<Panel>().FirstOrDefault(panel => panel.Controls.OfType<CheckBox>().Where(checkBox => checkBox.Checked))
+            }
+
             taskData.ModifiedDate = DateTime.Now;
 
             int orderIndex = 0;
