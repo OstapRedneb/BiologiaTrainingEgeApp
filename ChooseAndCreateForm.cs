@@ -25,8 +25,7 @@ namespace BiologiaTrainingEgeApp
 
         private void buttonCreateLectures_Click(object sender, EventArgs e)
         {
-            new CreateLectureForm().Show();
-            this.Close();
+            MessageBox.Show("Приложение ещё в бета-тесте. Эта функция будет добавлена похже", "Приносим извинения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

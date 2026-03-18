@@ -1,4 +1,5 @@
 ﻿using BiologiaTrainingEgeApp.Classes;
+using BiologiaTrainingEgeApp.MainUserInfo;
 using BiologiaTrainingEgeApp.Storages;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace BiologiaTrainingEgeApp
 {
     public partial class CreateTaskForm : Form
     {
+        private string questionCache = "";
         private TaskData currentTask;
 
         public CreateTaskForm()
@@ -393,6 +395,9 @@ namespace BiologiaTrainingEgeApp
                     "Сохранение",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+
+                new MainMenuForm().Show();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -402,6 +407,7 @@ namespace BiologiaTrainingEgeApp
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+            questionCache = "";
         }
 
         // Метод для сбора данных с формы
@@ -418,8 +424,25 @@ namespace BiologiaTrainingEgeApp
                                         .OfType<CheckBox>()
                                         .Any(checkBox => checkBox.Checked)))
             {
-                taskData.QuestionText = flowLayoutPanel1.Controls.OfType<Panel>().FirstOrDefault(panel => panel.Controls.OfType<CheckBox>().Where(checkBox => checkBox.Checked))
+                taskData.QuestionText = flowLayoutPanel1.Controls
+                    .OfType<Panel>()
+                    .FirstOrDefault(panel => panel.Controls.OfType<CheckBox>().FirstOrDefault()?.Checked ?? false)
+                    ?.Controls
+                    ?.OfType<TextBox>()
+                    ?.FirstOrDefault()?.Text ?? "";
+
+                questionCache = taskData.QuestionText;
             }
+            else 
+            {
+                MessageBox.Show("Вы не указали вопрос\n" +
+                    "Подсказка: для этого создайте (или выберите уже существующий текст) и отметьте\n" +
+                    "Галочку на пункте \"Сделать вопросом\"", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                throw new Exception("Не указан вопрос задания");
+            }
+
+            taskData.Answer = GetCorrectAnswer();
+            taskData.Author = UserInfo.User?.Login ?? "Аноним";
 
             taskData.ModifiedDate = DateTime.Now;
 
@@ -478,7 +501,7 @@ namespace BiologiaTrainingEgeApp
 
             // Ищем TextBox в панели
             TextBox textBox = panel.Controls.OfType<TextBox>().FirstOrDefault();
-            if (textBox != null)
+            if (textBox != null && questionCache != textBox.Text)
             {
                 textBlock.Content = textBox.Text;
             }
@@ -588,6 +611,19 @@ namespace BiologiaTrainingEgeApp
                 if (int.TryParse(input, out int number) && 1 <= number && number <= 28)
                     return number;
                 MessageBox.Show("Некорректный номер задания\nВы должны ввести номер от 1 до 28", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private string GetCorrectAnswer() 
+        {
+            while (true)
+            {
+                string input = Microsoft.VisualBasic.Interaction.InputBox("Какой ответ на это задание?", "Ответ на задание");
+
+                DialogResult result = MessageBox.Show("Вы уверенны в своём ответе?" +
+                    "\n(Если не уверенны и хотите переписать, то нажмите НЕТ)", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes && !string.IsNullOrWhiteSpace(input))
+                    return input;
             }
         }
     }

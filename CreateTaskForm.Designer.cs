@@ -73,7 +73,7 @@
             buttonSaveTask.TabIndex = 3;
             buttonSaveTask.Text = "Сохранить задание";
             buttonSaveTask.UseVisualStyleBackColor = false;
-            buttonSaveTask.Click += buttonAddText_Click;
+            buttonSaveTask.Click += buttonSaveTask_Click;
             // 
             // buttonAddTable
             // 
@@ -109,7 +109,6 @@
             buttonAddText.TabIndex = 0;
             buttonAddText.Text = "Добавить текст";
             buttonAddText.UseVisualStyleBackColor = false;
-            buttonAddImage.Click += buttonAddImage_Click;
             buttonAddText.Click += buttonAddText_Click;
             // 
             // CreateTaskForm

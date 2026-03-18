@@ -63,9 +63,29 @@ namespace BiologiaTrainingEgeApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _99px_ru_wallpaper_354160_korova_na_korichnevom_fone {
+            get {
+                object obj = ResourceManager.GetObject("99px_ru_wallpaper_354160_korova_na_korichnevom_fone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _99px_ru_wallpaper_366170_siluet_volka_stojashego_na_holme_na_fone_jarkogo {
             get {
                 object obj = ResourceManager.GetObject("99px_ru_wallpaper_366170_siluet_volka_stojashego_na_holme_na_fone_jarkogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _99px_ru_wallpaper_374529_belij_krujevnoj_uzor_v_vide_jagodi_na_zelenom {
+            get {
+                object obj = ResourceManager.GetObject("99px_ru_wallpaper_374529_belij_krujevnoj_uzor_v_vide_jagodi_na_zelenom", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

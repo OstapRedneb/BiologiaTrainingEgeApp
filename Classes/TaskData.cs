@@ -19,6 +19,7 @@ namespace BiologiaTrainingEgeApp.Classes
         public DateTime CreatedDate { get; set; }           // Дата создания
         public DateTime ModifiedDate { get; set; }          // Дата изменения
         public Guid TaskId { get; set; }                  // Уникальный идентификатор
+        public string Author { get; set; }             // Логин автора
 
         public TaskData()
         {

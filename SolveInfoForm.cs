@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BiologiaTrainingEgeApp
 {
-    public partial class CreateLectureForm : Form
+    public partial class SolveInfoForm : Form
     {
-        public CreateLectureForm()
+        public SolveInfoForm()
         {
             InitializeComponent();
         }

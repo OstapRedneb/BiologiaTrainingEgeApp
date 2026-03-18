@@ -22,6 +22,13 @@ namespace BiologiaTrainingEgeApp
 
         private void buttonReadLections_Click(object sender, EventArgs e)
         {
+            var startInfo = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://media.foxford.ru/exams",
+                UseShellExecute = true,
+                Verb = "open"
+            };
+            System.Diagnostics.Process.Start(startInfo);
 
         }
 
@@ -29,11 +36,11 @@ namespace BiologiaTrainingEgeApp
         {
             if (!(UserInfo.User is null))
             {
-                //Skip
+                
             }
             else
             {
-                DialogResult result = MessageBox.Show($"Вы не можете создавть задания без учётной записи.\nСоздать учётную запись?", "Извините", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                DialogResult result = MessageBox.Show($"Вы не можете решать задания без учётной записи.\nСоздать учётную запись?", "Извините", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 if (result == DialogResult.Yes)
                     buttonRegistration_Click(this, new EventArgs());
             }

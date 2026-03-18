@@ -42,7 +42,7 @@
             // buttonReadLections
             // 
             buttonReadLections.BackColor = Color.FromArgb(128, 255, 255);
-            buttonReadLections.Location = new Point(359, 26);
+            buttonReadLections.Location = new Point(371, 26);
             buttonReadLections.Name = "buttonReadLections";
             buttonReadLections.Size = new Size(166, 72);
             buttonReadLections.TabIndex = 0;
@@ -53,7 +53,7 @@
             // buttonSolve
             // 
             buttonSolve.BackColor = Color.FromArgb(255, 192, 128);
-            buttonSolve.Location = new Point(359, 126);
+            buttonSolve.Location = new Point(371, 126);
             buttonSolve.Name = "buttonSolve";
             buttonSolve.Size = new Size(166, 72);
             buttonSolve.TabIndex = 1;
@@ -75,7 +75,7 @@
             // buttonCreateTests
             // 
             buttonCreateTests.BackColor = Color.FromArgb(255, 128, 255);
-            buttonCreateTests.Location = new Point(359, 218);
+            buttonCreateTests.Location = new Point(371, 218);
             buttonCreateTests.Name = "buttonCreateTests";
             buttonCreateTests.Size = new Size(166, 72);
             buttonCreateTests.TabIndex = 3;
@@ -86,7 +86,7 @@
             // buttonAdmin
             // 
             buttonAdmin.BackColor = Color.FromArgb(255, 128, 128);
-            buttonAdmin.Location = new Point(359, 313);
+            buttonAdmin.Location = new Point(371, 313);
             buttonAdmin.Name = "buttonAdmin";
             buttonAdmin.Size = new Size(166, 72);
             buttonAdmin.TabIndex = 4;
@@ -97,7 +97,7 @@
             // buttonExit
             // 
             buttonExit.BackColor = Color.Red;
-            buttonExit.Location = new Point(359, 407);
+            buttonExit.Location = new Point(371, 407);
             buttonExit.Name = "buttonExit";
             buttonExit.Size = new Size(166, 72);
             buttonExit.TabIndex = 5;
@@ -144,6 +144,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(128, 255, 128);
+            BackgroundImage = Properties.Resources._99px_ru_wallpaper_374529_belij_krujevnoj_uzor_v_vide_jagodi_na_zelenom;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(910, 526);
             Controls.Add(labelAcount);
             Controls.Add(buttonRegistration);
