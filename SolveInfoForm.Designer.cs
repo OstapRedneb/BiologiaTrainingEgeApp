@@ -86,6 +86,7 @@
             textBox17 = new TextBox();
             label33 = new Label();
             buttonSolve = new Button();
+            buttonBack = new Button();
             SuspendLayout();
             // 
             // label1
@@ -669,6 +670,20 @@
             buttonSolve.TabIndex = 57;
             buttonSolve.Text = "Решать";
             buttonSolve.UseVisualStyleBackColor = false;
+            buttonSolve.Click += buttonSolve_Click;
+            // 
+            // buttonBack
+            // 
+            buttonBack.BackColor = Color.Red;
+            buttonBack.Font = new Font("Comic Sans MS", 12F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            buttonBack.ForeColor = SystemColors.ButtonHighlight;
+            buttonBack.Location = new Point(12, 9);
+            buttonBack.Name = "buttonBack";
+            buttonBack.Size = new Size(77, 30);
+            buttonBack.TabIndex = 58;
+            buttonBack.Text = "Назад";
+            buttonBack.UseVisualStyleBackColor = false;
+            buttonBack.Click += buttonBack_Click;
             // 
             // SolveInfoForm
             // 
@@ -677,6 +692,7 @@
             BackgroundImage = Properties.Resources._99px_ru_wallpaper_354160_korova_na_korichnevom_fone;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonBack);
             Controls.Add(buttonSolve);
             Controls.Add(textBox28);
             Controls.Add(label22);
@@ -744,8 +760,8 @@
         #endregion
 
         private Label label1;
-        private Label label2;
         private TextBox textBox1;
+        private Label label2;
         private TextBox textBox2;
         private Label label3;
         private TextBox textBox4;
@@ -801,5 +817,7 @@
         private TextBox textBox17;
         private Label label33;
         private Button buttonSolve;
+        private Button buttonBack;
+
     }
 }

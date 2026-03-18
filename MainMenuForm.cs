@@ -36,7 +36,8 @@ namespace BiologiaTrainingEgeApp
         {
             if (!(UserInfo.User is null))
             {
-                
+                new SolveInfoForm().Show();
+                this.Hide();
             }
             else
             {
