@@ -15,7 +15,6 @@ namespace BiologiaTrainingEgeApp
 {
     public partial class CreateTaskForm : Form
     {
-        private string questionCache = "";
         private TaskData currentTask;
 
         public CreateTaskForm()
@@ -123,8 +122,19 @@ namespace BiologiaTrainingEgeApp
                     ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        pictureBox.ImageLocation = ofd.FileName; // загружаем из файла
-                                                                 // Можно также загрузить изображение в PictureBox.Image для хранения в памяти
+                        try
+                        {
+                            // Загружаем изображение через FileStream, чтобы не блокировать файл
+                            using (FileStream fs = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read))
+                            {
+                                pictureBox.Image = Image.FromStream(fs);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Ошибка загрузки изображения: {ex.Message}",
+                                "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             };
@@ -407,7 +417,6 @@ namespace BiologiaTrainingEgeApp
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-            questionCache = "";
         }
 
         // Метод для сбора данных с формы
@@ -415,25 +424,31 @@ namespace BiologiaTrainingEgeApp
         {
             TaskData taskData = new TaskData();
 
-            // Собираем основную информацию
+            // Собираем номер и ответ
             taskData.Number = GetCorrectNumer();
+            taskData.Answer = GetCorrectAnswer();
+            taskData.Author = UserInfo.User?.Login ?? "Аноним";
+            taskData.ModifiedDate = DateTime.Now;
 
-            if (flowLayoutPanel1.Controls
-                .OfType<Panel>()
-                .Any(panel => panel.Controls
-                                        .OfType<CheckBox>()
-                                        .Any(checkBox => checkBox.Checked)))
+            // ---------- Поиск панели с вопросом ----------
+            Panel questionPanel = null;
+            foreach (Panel panel in flowLayoutPanel1.Controls.OfType<Panel>())
             {
-                taskData.QuestionText = flowLayoutPanel1.Controls
-                    .OfType<Panel>()
-                    .FirstOrDefault(panel => panel.Controls.OfType<CheckBox>().FirstOrDefault()?.Checked ?? false)
-                    ?.Controls
-                    ?.OfType<TextBox>()
-                    ?.FirstOrDefault()?.Text ?? "";
-
-                questionCache = taskData.QuestionText;
+                // Ищем чекбокс рекурсивно по всем вложенным контролам
+                if (GetAllControls(panel).OfType<CheckBox>().Any(cb => cb.Checked))
+                {
+                    questionPanel = panel;
+                    break;
+                }
             }
-            else 
+
+            if (questionPanel != null)
+            {
+                // Текст вопроса находится в TextBox, лежащем непосредственно в панели
+                TextBox tb = questionPanel.Controls.OfType<TextBox>().FirstOrDefault();
+                taskData.QuestionText = tb?.Text ?? "";
+            }
+            else
             {
                 MessageBox.Show("Вы не указали вопрос\n" +
                     "Подсказка: для этого создайте (или выберите уже существующий текст) и отметьте\n" +
@@ -441,24 +456,19 @@ namespace BiologiaTrainingEgeApp
                 throw new Exception("Не указан вопрос задания");
             }
 
-            taskData.Answer = GetCorrectAnswer();
-            taskData.Author = UserInfo.User?.Login ?? "Аноним";
-
-            taskData.ModifiedDate = DateTime.Now;
-
+            // ---------- Сбор остальных блоков (исключая панель вопроса) ----------
             int orderIndex = 0;
-
-            // Проходим по всем панелям в FlowLayoutPanel
             foreach (Control control in flowLayoutPanel1.Controls)
             {
                 if (control is Panel blockPanel)
                 {
-                    // Определяем тип блока и создаем соответствующий объект
+                    // Пропускаем панель, которая уже использована как вопрос
+                    if (GetAllControls(blockPanel).OfType<CheckBox>().Any(cb => cb.Checked))
+                        continue;
+
                     TaskBlock block = CreateBlockFromPanel(blockPanel, orderIndex++);
                     if (block != null)
-                    {
                         taskData.Blocks.Add(block);
-                    }
                 }
             }
 
@@ -499,11 +509,11 @@ namespace BiologiaTrainingEgeApp
                 OrderIndex = orderIndex
             };
 
-            // Ищем TextBox в панели
             TextBox textBox = panel.Controls.OfType<TextBox>().FirstOrDefault();
-            if (textBox != null && questionCache != textBox.Text)
+            if (textBox != null)
             {
                 textBlock.Content = textBox.Text;
+                // Здесь можно добавить сохранение шрифта, если нужно
             }
 
             return textBlock;
@@ -624,6 +634,15 @@ namespace BiologiaTrainingEgeApp
 
                 if (result == DialogResult.Yes && !string.IsNullOrWhiteSpace(input))
                     return input;
+            }
+        }
+        private IEnumerable<Control> GetAllControls(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                yield return control;
+                foreach (Control child in GetAllControls(control))
+                    yield return child;
             }
         }
     }

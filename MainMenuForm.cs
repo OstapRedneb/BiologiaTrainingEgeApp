@@ -65,12 +65,25 @@ namespace BiologiaTrainingEgeApp
 
         private void buttonAdmin_Click(object sender, EventArgs e)
         {
-
+            if (UserInfo.User is null || !UserInfo.User.IsAdmin) 
+            {
+                MessageBox.Show("У вас нет прав администратора для работы с этой панелью!", "Пинок!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                //Comming soon ;)
+            }
         }
 
         private void buttonAboutUs_Click(object sender, EventArgs e)
         {
-
+            var startInfo = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "https://github.com/OstapRedneb/BiologiaTrainingEgeApp",
+                UseShellExecute = true,
+                Verb = "open"
+            };
+            System.Diagnostics.Process.Start(startInfo);
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)

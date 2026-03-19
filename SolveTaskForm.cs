@@ -306,13 +306,8 @@ namespace BiologiaTrainingEgeApp
                 });
             }
 
-            // TODO: Здесь открыть новую форму с результатами, передав results
-            // Например:
-            // ResultForm resultForm = new ResultForm(results);
-            // resultForm.ShowDialog();
-
-            // Закрыть текущую форму (по желанию)
-            // this.Close();
+            new ResultForm(results).Show();
+            this.Close();
         }
 
         // Обработчик изменения размера формы – обновляем ширину панелей заданий

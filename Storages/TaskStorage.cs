@@ -9,26 +9,31 @@ namespace BiologiaTrainingEgeApp.Storages
 {
     public static class TaskStorage
     {
-        private static readonly string _path = "tsaks";
+        private static readonly string _path = "tasks";
+
+        private static readonly JsonSerializerSettings _settings = new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.Auto,
+            Formatting = Formatting.Indented 
+        };
 
         public static List<TaskData> GetAll()
         {
             if (File.Exists(_path))
-                return JsonConvert.DeserializeObject<List<TaskData>>(File.ReadAllText(_path)) ?? new List<TaskData>();
+            {
+                string json = File.ReadAllText(_path);
+                return JsonConvert.DeserializeObject<List<TaskData>>(json, _settings) ?? new List<TaskData>();
+            }
             return new List<TaskData>();
         }
 
         public static bool Add(TaskData task)
         {
             List<TaskData> tasks = GetAll();
-
             if (tasks.Contains(task))
                 return false;
-
             tasks.Add(task);
-
             WriteInto(tasks);
-
             return true;
         }
 
@@ -37,13 +42,10 @@ namespace BiologiaTrainingEgeApp.Storages
             return tasks.All(task => Add(task));
         }
 
-        private static void WriteInto(List<TaskData> tasks) 
+        private static void WriteInto(List<TaskData> tasks)
         {
-            string blob = JsonConvert.SerializeObject(tasks ?? new List<TaskData>());
-            using (StreamWriter stringWriter = new StreamWriter(_path, false)) 
-            {
-                stringWriter.Write(blob);
-            }
+            string blob = JsonConvert.SerializeObject(tasks ?? new List<TaskData>(), _settings);
+            File.WriteAllText(_path, blob);
         }
     }
 }
