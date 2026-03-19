@@ -1,3 +1,6 @@
 <h1>BiologiaTrainingEgeApp<h1/>
 <h2>Участники:Болховских Дарья, Николаева Александра, Коптева Елизавета, Нестеренко Елизавета</h2>
 <h3>Тема:22</h3>
+
+
+#Установщик: BiologiaTrainingEgeApp\installator\installerBiologiaEgeApp
