@@ -73,6 +73,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LimeGreen;
+            BackgroundImage = Properties.Resources.lampa_torsher_abazhur_130310_3840x2160;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(buttonBack);
             Controls.Add(buttonCreateLectures);

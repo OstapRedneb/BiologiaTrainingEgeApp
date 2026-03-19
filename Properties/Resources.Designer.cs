@@ -89,5 +89,15 @@ namespace BiologiaTrainingEgeApp.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lampa_torsher_abazhur_130310_3840x2160 {
+            get {
+                object obj = ResourceManager.GetObject("lampa_torsher_abazhur_130310_3840x2160", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
