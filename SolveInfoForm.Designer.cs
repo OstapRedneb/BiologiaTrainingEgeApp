@@ -114,6 +114,7 @@
             // 
             textBox1.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox1.Location = new Point(104, 72);
+            textBox1.MaxLength = 3;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(45, 28);
             textBox1.TabIndex = 2;
@@ -124,6 +125,7 @@
             textBox2.BackColor = SystemColors.ActiveBorder;
             textBox2.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox2.Location = new Point(104, 106);
+            textBox2.MaxLength = 3;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(45, 28);
             textBox2.TabIndex = 4;
@@ -145,6 +147,7 @@
             textBox4.BackColor = SystemColors.ActiveBorder;
             textBox4.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox4.Location = new Point(104, 174);
+            textBox4.MaxLength = 3;
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(45, 28);
             textBox4.TabIndex = 8;
@@ -165,6 +168,7 @@
             // 
             textBox3.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox3.Location = new Point(104, 140);
+            textBox3.MaxLength = 3;
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(45, 28);
             textBox3.TabIndex = 6;
@@ -185,6 +189,7 @@
             textBox8.BackColor = SystemColors.ActiveBorder;
             textBox8.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox8.Location = new Point(104, 310);
+            textBox8.MaxLength = 3;
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(45, 28);
             textBox8.TabIndex = 16;
@@ -205,6 +210,7 @@
             // 
             textBox7.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox7.Location = new Point(104, 276);
+            textBox7.MaxLength = 3;
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(45, 28);
             textBox7.TabIndex = 14;
@@ -225,6 +231,7 @@
             textBox6.BackColor = SystemColors.ActiveBorder;
             textBox6.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox6.Location = new Point(104, 242);
+            textBox6.MaxLength = 3;
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(45, 28);
             textBox6.TabIndex = 12;
@@ -245,6 +252,7 @@
             // 
             textBox5.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox5.Location = new Point(104, 208);
+            textBox5.MaxLength = 3;
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(45, 28);
             textBox5.TabIndex = 10;
@@ -265,6 +273,7 @@
             textBox16.BackColor = SystemColors.ActiveBorder;
             textBox16.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox16.Location = new Point(271, 310);
+            textBox16.MaxLength = 3;
             textBox16.Name = "textBox16";
             textBox16.Size = new Size(45, 28);
             textBox16.TabIndex = 32;
@@ -285,6 +294,7 @@
             // 
             textBox15.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox15.Location = new Point(271, 276);
+            textBox15.MaxLength = 3;
             textBox15.Name = "textBox15";
             textBox15.Size = new Size(45, 28);
             textBox15.TabIndex = 30;
@@ -305,6 +315,7 @@
             textBox14.BackColor = SystemColors.ActiveBorder;
             textBox14.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox14.Location = new Point(271, 242);
+            textBox14.MaxLength = 3;
             textBox14.Name = "textBox14";
             textBox14.Size = new Size(45, 28);
             textBox14.TabIndex = 28;
@@ -325,6 +336,7 @@
             // 
             textBox13.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox13.Location = new Point(271, 208);
+            textBox13.MaxLength = 3;
             textBox13.Name = "textBox13";
             textBox13.Size = new Size(45, 28);
             textBox13.TabIndex = 26;
@@ -345,6 +357,7 @@
             textBox12.BackColor = SystemColors.ActiveBorder;
             textBox12.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox12.Location = new Point(271, 174);
+            textBox12.MaxLength = 3;
             textBox12.Name = "textBox12";
             textBox12.Size = new Size(45, 28);
             textBox12.TabIndex = 24;
@@ -365,6 +378,7 @@
             // 
             textBox11.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox11.Location = new Point(271, 140);
+            textBox11.MaxLength = 3;
             textBox11.Name = "textBox11";
             textBox11.Size = new Size(45, 28);
             textBox11.TabIndex = 22;
@@ -385,6 +399,7 @@
             textBox10.BackColor = SystemColors.ActiveBorder;
             textBox10.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox10.Location = new Point(271, 106);
+            textBox10.MaxLength = 3;
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(45, 28);
             textBox10.TabIndex = 20;
@@ -405,6 +420,7 @@
             // 
             textBox9.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox9.Location = new Point(271, 72);
+            textBox9.MaxLength = 3;
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(45, 28);
             textBox9.TabIndex = 18;
@@ -425,6 +441,7 @@
             textBox28.BackColor = SystemColors.ActiveBorder;
             textBox28.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox28.Location = new Point(597, 177);
+            textBox28.MaxLength = 3;
             textBox28.Name = "textBox28";
             textBox28.Size = new Size(45, 28);
             textBox28.TabIndex = 56;
@@ -445,6 +462,7 @@
             // 
             textBox27.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox27.Location = new Point(597, 143);
+            textBox27.MaxLength = 3;
             textBox27.Name = "textBox27";
             textBox27.Size = new Size(45, 28);
             textBox27.TabIndex = 54;
@@ -465,6 +483,7 @@
             textBox26.BackColor = SystemColors.ActiveBorder;
             textBox26.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox26.Location = new Point(597, 109);
+            textBox26.MaxLength = 3;
             textBox26.Name = "textBox26";
             textBox26.Size = new Size(45, 28);
             textBox26.TabIndex = 52;
@@ -485,6 +504,7 @@
             // 
             textBox25.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox25.Location = new Point(597, 75);
+            textBox25.MaxLength = 3;
             textBox25.Name = "textBox25";
             textBox25.Size = new Size(45, 28);
             textBox25.TabIndex = 50;
@@ -505,6 +525,7 @@
             textBox24.BackColor = SystemColors.ActiveBorder;
             textBox24.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox24.Location = new Point(433, 310);
+            textBox24.MaxLength = 3;
             textBox24.Name = "textBox24";
             textBox24.Size = new Size(45, 28);
             textBox24.TabIndex = 48;
@@ -525,6 +546,7 @@
             // 
             textBox23.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox23.Location = new Point(433, 276);
+            textBox23.MaxLength = 3;
             textBox23.Name = "textBox23";
             textBox23.Size = new Size(45, 28);
             textBox23.TabIndex = 46;
@@ -545,6 +567,7 @@
             textBox22.BackColor = SystemColors.ActiveBorder;
             textBox22.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox22.Location = new Point(433, 242);
+            textBox22.MaxLength = 3;
             textBox22.Name = "textBox22";
             textBox22.Size = new Size(45, 28);
             textBox22.TabIndex = 44;
@@ -565,6 +588,7 @@
             // 
             textBox21.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox21.Location = new Point(433, 208);
+            textBox21.MaxLength = 3;
             textBox21.Name = "textBox21";
             textBox21.Size = new Size(45, 28);
             textBox21.TabIndex = 42;
@@ -585,6 +609,7 @@
             textBox20.BackColor = SystemColors.ActiveBorder;
             textBox20.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox20.Location = new Point(433, 174);
+            textBox20.MaxLength = 3;
             textBox20.Name = "textBox20";
             textBox20.Size = new Size(45, 28);
             textBox20.TabIndex = 40;
@@ -605,6 +630,7 @@
             // 
             textBox19.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox19.Location = new Point(433, 140);
+            textBox19.MaxLength = 3;
             textBox19.Name = "textBox19";
             textBox19.Size = new Size(45, 28);
             textBox19.TabIndex = 38;
@@ -625,6 +651,7 @@
             textBox18.BackColor = SystemColors.ActiveBorder;
             textBox18.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox18.Location = new Point(433, 106);
+            textBox18.MaxLength = 3;
             textBox18.Name = "textBox18";
             textBox18.Size = new Size(45, 28);
             textBox18.TabIndex = 36;
@@ -645,6 +672,7 @@
             // 
             textBox17.Font = new Font("Comic Sans MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
             textBox17.Location = new Point(433, 72);
+            textBox17.MaxLength = 3;
             textBox17.Name = "textBox17";
             textBox17.Size = new Size(45, 28);
             textBox17.TabIndex = 34;
