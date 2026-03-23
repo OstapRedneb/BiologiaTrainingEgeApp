@@ -29,14 +29,19 @@ namespace BiologiaTrainingEgeApp
         {
             if (string.IsNullOrWhiteSpace(textBoxLogin.Text))
                 MessageBox.Show("Вы не ввели логин", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             if (!textBoxLogin.Text.All(c => '0' <= c && c <= '9' || 'A' <= c && c <= 'z' || 'А' <= c && c <= 'я'))
                 MessageBox.Show("Логин должен состоять только из цифр и букв", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             if (textBoxCopyPassword.Text != textBoxPassword.Text)
                 MessageBox.Show("Пароли должны совпадать", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             if (string.IsNullOrWhiteSpace(textBoxPassword.Text))
                 MessageBox.Show("Вы не ввели пароль", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             if (textBoxPassword.Text.Length <= 6)
                 MessageBox.Show("Пароль должен состоять более чем из 6 символов", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             if (!textBoxPassword.Text.All(c => '0' <= c && c <= '9' || 'A' <= c && c <= 'z' || 'А' <= c && c <= 'я'))
                 MessageBox.Show("Пароль должен состоять только из цифр и букв", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

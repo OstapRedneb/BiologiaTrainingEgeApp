@@ -23,7 +23,7 @@ namespace BiologiaTrainingEgeApp.Storages
         {
             List<User> users = GetAll();
 
-            if (users.Any(user => user.Login == user.Login))
+            if (users.Any(other => other.Login == user.Login))
                 return false;
 
             users.Add(user);

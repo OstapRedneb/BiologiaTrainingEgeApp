@@ -32,19 +32,19 @@
             buttonSolve = new Button();
             buttonLogin = new Button();
             buttonCreateTests = new Button();
-            buttonAdmin = new Button();
             buttonExit = new Button();
             buttonAboutUs = new Button();
             buttonRegistration = new Button();
             labelAcount = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // buttonReadLections
             // 
             buttonReadLections.BackColor = Color.FromArgb(128, 255, 255);
-            buttonReadLections.Location = new Point(371, 26);
+            buttonReadLections.Location = new Point(383, 156);
             buttonReadLections.Name = "buttonReadLections";
-            buttonReadLections.Size = new Size(166, 72);
+            buttonReadLections.Size = new Size(148, 64);
             buttonReadLections.TabIndex = 0;
             buttonReadLections.Text = "Читать лекции";
             buttonReadLections.UseVisualStyleBackColor = false;
@@ -53,9 +53,9 @@
             // buttonSolve
             // 
             buttonSolve.BackColor = Color.FromArgb(255, 192, 128);
-            buttonSolve.Location = new Point(371, 126);
+            buttonSolve.Location = new Point(383, 261);
             buttonSolve.Name = "buttonSolve";
-            buttonSolve.Size = new Size(166, 72);
+            buttonSolve.Size = new Size(148, 64);
             buttonSolve.TabIndex = 1;
             buttonSolve.Text = "Решать задания";
             buttonSolve.UseVisualStyleBackColor = false;
@@ -75,31 +75,20 @@
             // buttonCreateTests
             // 
             buttonCreateTests.BackColor = Color.FromArgb(255, 128, 255);
-            buttonCreateTests.Location = new Point(371, 218);
+            buttonCreateTests.Location = new Point(383, 359);
             buttonCreateTests.Name = "buttonCreateTests";
-            buttonCreateTests.Size = new Size(166, 72);
+            buttonCreateTests.Size = new Size(148, 64);
             buttonCreateTests.TabIndex = 3;
             buttonCreateTests.Text = "Создать";
             buttonCreateTests.UseVisualStyleBackColor = false;
             buttonCreateTests.Click += buttonCreateTests_Click;
             // 
-            // buttonAdmin
-            // 
-            buttonAdmin.BackColor = Color.FromArgb(255, 128, 128);
-            buttonAdmin.Location = new Point(371, 313);
-            buttonAdmin.Name = "buttonAdmin";
-            buttonAdmin.Size = new Size(166, 72);
-            buttonAdmin.TabIndex = 4;
-            buttonAdmin.Text = "Панель администратора";
-            buttonAdmin.UseVisualStyleBackColor = false;
-            buttonAdmin.Click += buttonAdmin_Click;
-            // 
             // buttonExit
             // 
             buttonExit.BackColor = Color.Red;
-            buttonExit.Location = new Point(371, 407);
+            buttonExit.Location = new Point(383, 452);
             buttonExit.Name = "buttonExit";
-            buttonExit.Size = new Size(166, 72);
+            buttonExit.Size = new Size(148, 64);
             buttonExit.TabIndex = 5;
             buttonExit.Text = "Выход";
             buttonExit.UseVisualStyleBackColor = false;
@@ -139,6 +128,20 @@
             labelAcount.TabIndex = 8;
             labelAcount.Text = "Нет аккаунта";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Green;
+            label1.Font = new Font("Comic Sans MS", 24F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.ForeColor = Color.LawnGreen;
+            label1.Image = Properties.Resources._99px_ru_wallpaper_374529_belij_krujevnoj_uzor_v_vide_jagodi_na_zelenom;
+            label1.ImageAlign = ContentAlignment.BottomCenter;
+            label1.Location = new Point(196, 77);
+            label1.Name = "label1";
+            label1.Size = new Size(527, 45);
+            label1.TabIndex = 9;
+            label1.Text = "Подготовка к ЕГЭ по биологии";
+            // 
             // MainMenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -147,11 +150,11 @@
             BackgroundImage = Properties.Resources._99px_ru_wallpaper_374529_belij_krujevnoj_uzor_v_vide_jagodi_na_zelenom;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(910, 526);
+            Controls.Add(label1);
             Controls.Add(labelAcount);
             Controls.Add(buttonRegistration);
             Controls.Add(buttonAboutUs);
             Controls.Add(buttonExit);
-            Controls.Add(buttonAdmin);
             Controls.Add(buttonCreateTests);
             Controls.Add(buttonLogin);
             Controls.Add(buttonSolve);
@@ -169,10 +172,10 @@
         private Button buttonSolve;
         private Button buttonLogin;
         private Button buttonCreateTests;
-        private Button buttonAdmin;
         private Button buttonExit;
         private Button buttonAboutUs;
         private Button buttonRegistration;
         private Label labelAcount;
+        private Label label1;
     }
 }

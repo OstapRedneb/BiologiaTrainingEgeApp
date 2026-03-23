@@ -63,17 +63,17 @@ namespace BiologiaTrainingEgeApp
             }
         }
 
-        private void buttonAdmin_Click(object sender, EventArgs e)
-        {
-            if (UserInfo.User is null || !UserInfo.User.IsAdmin) 
-            {
-                MessageBox.Show("У вас нет прав администратора для работы с этой панелью!", "Пинок!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                //Comming soon ;)
-            }
-        }
+        //private void buttonAdmin_Click(object sender, EventArgs e)
+        //{
+        //    if (UserInfo.User is null || !UserInfo.User.IsAdmin) 
+        //    {
+        //        MessageBox.Show("У вас нет прав администратора для работы с этой панелью!", "Пинок!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //    else
+        //    {
+                
+        //    }
+        //}
 
         private void buttonAboutUs_Click(object sender, EventArgs e)
         {
