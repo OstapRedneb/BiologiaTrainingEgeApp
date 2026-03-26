@@ -136,7 +136,7 @@
             label1.ForeColor = Color.LawnGreen;
             label1.Image = Properties.Resources._99px_ru_wallpaper_374529_belij_krujevnoj_uzor_v_vide_jagodi_na_zelenom;
             label1.ImageAlign = ContentAlignment.BottomCenter;
-            label1.Location = new Point(196, 77);
+            label1.Location = new Point(151, 77);
             label1.Name = "label1";
             label1.Size = new Size(527, 45);
             label1.TabIndex = 9;
