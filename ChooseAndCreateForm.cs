@@ -23,10 +23,10 @@ namespace BiologiaTrainingEgeApp
             this.Close();
         }
 
-        private void buttonCreateLectures_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Приложение ещё в бета-тесте. Эта функция будет добавлена похже", "Приносим извинения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
+        //private void buttonCreateLectures_Click(object sender, EventArgs e)
+        //{
+        //    MessageBox.Show("Приложение ещё в бета-тесте. Эта функция будет добавлена похже", "Приносим извинения", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        //}
 
         private void buttonBack_Click(object sender, EventArgs e)
         {

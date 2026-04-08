@@ -63,7 +63,7 @@
             Controls.Add(buttonFinish);
             Controls.Add(dataGridViewResults);
             Name = "ResultForm";
-            Text = "ResultForm";
+            Text = "Результаты";
             ((System.ComponentModel.ISupportInitialize)dataGridViewResults).EndInit();
             ResumeLayout(false);
         }

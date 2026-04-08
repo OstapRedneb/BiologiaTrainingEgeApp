@@ -160,7 +160,7 @@
             Controls.Add(buttonCreate);
             Controls.Add(buttonBack);
             Name = "RegistrationForm";
-            Text = "RegistrationForm";
+            Text = "Регистрация";
             ResumeLayout(false);
             PerformLayout();
         }

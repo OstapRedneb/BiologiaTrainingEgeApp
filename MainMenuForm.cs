@@ -79,7 +79,7 @@ namespace BiologiaTrainingEgeApp
         {
             var startInfo = new System.Diagnostics.ProcessStartInfo
             {
-                FileName = "https://github.com/OstapRedneb/BiologiaTrainingEgeApp",
+                FileName = "https://improve-likable-vuvuzela.tilda.ws/",
                 UseShellExecute = true,
                 Verb = "open"
             };

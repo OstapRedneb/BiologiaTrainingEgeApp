@@ -134,7 +134,7 @@
             Controls.Add(buttonCreate);
             Controls.Add(buttonBack);
             Name = "LoginForm";
-            Text = "LoginForm";
+            Text = "Вход";
             ResumeLayout(false);
             PerformLayout();
         }

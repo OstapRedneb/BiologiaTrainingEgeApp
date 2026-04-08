@@ -49,7 +49,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(flowLayoutPanelTasks);
             Name = "SolveTaskForm";
-            Text = "SolveTaskForm";
+            Text = "Решайте";
             ResumeLayout(false);
         }
 

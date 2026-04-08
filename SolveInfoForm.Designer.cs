@@ -780,7 +780,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "SolveInfoForm";
-            Text = "SolveInfoForm";
+            Text = "Выбор";
             ResumeLayout(false);
             PerformLayout();
         }

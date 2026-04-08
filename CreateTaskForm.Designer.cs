@@ -118,7 +118,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(flowLayoutPanel1);
             Name = "CreateTaskForm";
-            Text = "CreateTaskForm";
+            Text = "task trainer";
             flowLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             ResumeLayout(false);

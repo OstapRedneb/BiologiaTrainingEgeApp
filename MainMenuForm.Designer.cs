@@ -160,7 +160,7 @@
             Controls.Add(buttonSolve);
             Controls.Add(buttonReadLections);
             Name = "MainMenuForm";
-            Text = "MainMenu";
+            Text = "task trainer";
             Load += MainMenuForm_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -29,31 +29,19 @@
         private void InitializeComponent()
         {
             buttonCreateTests = new Button();
-            buttonCreateLectures = new Button();
             buttonBack = new Button();
             SuspendLayout();
             // 
             // buttonCreateTests
             // 
             buttonCreateTests.BackColor = Color.Teal;
-            buttonCreateTests.Location = new Point(181, 180);
+            buttonCreateTests.Location = new Point(307, 182);
             buttonCreateTests.Name = "buttonCreateTests";
             buttonCreateTests.Size = new Size(166, 72);
             buttonCreateTests.TabIndex = 4;
             buttonCreateTests.Text = "Создать задание";
             buttonCreateTests.UseVisualStyleBackColor = false;
             buttonCreateTests.Click += buttonCreateTests_Click;
-            // 
-            // buttonCreateLectures
-            // 
-            buttonCreateLectures.BackColor = Color.Salmon;
-            buttonCreateLectures.Location = new Point(453, 180);
-            buttonCreateLectures.Name = "buttonCreateLectures";
-            buttonCreateLectures.Size = new Size(166, 72);
-            buttonCreateLectures.TabIndex = 5;
-            buttonCreateLectures.Text = "Создать лекцию";
-            buttonCreateLectures.UseVisualStyleBackColor = false;
-            buttonCreateLectures.Click += buttonCreateLectures_Click;
             // 
             // buttonBack
             // 
@@ -77,7 +65,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(buttonBack);
-            Controls.Add(buttonCreateLectures);
             Controls.Add(buttonCreateTests);
             Name = "ChooseAndCreateForm";
             Text = "Выберите задание";
@@ -87,7 +74,6 @@
         #endregion
 
         private Button buttonCreateTests;
-        private Button buttonCreateLectures;
         private Button buttonBack;
     }
 }
